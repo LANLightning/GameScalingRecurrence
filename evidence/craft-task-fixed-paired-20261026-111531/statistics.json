@@ -1,0 +1,97 @@
+{
+  "ninfer": {
+    "decisions": 56,
+    "noop_count": 2,
+    "unique_model_texts": 43,
+    "acks": {
+      "completed": 55,
+      "aborted_focus_or_menu": 1
+    },
+    "keys": {
+      "W": 250,
+      "A": 16,
+      "Space": 95,
+      "LB": 24,
+      "Esc": 3
+    },
+    "ttft_ms": {
+      "mean": 523.7996982167325,
+      "median": 557.4139999807812,
+      "p95": 600.0686000334099
+    },
+    "first_action_ms": {
+      "mean": 679.814805355688,
+      "median": 714.1510499932338,
+      "p95": 775.145200022962
+    },
+    "total_ms": {
+      "mean": 846.6997357068716,
+      "median": 879.6598500048276,
+      "p95": 972.9840000509284
+    },
+    "capture_to_response_ms": {
+      "mean": 904.3991214285987,
+      "median": 932.3844000173267,
+      "p95": 1030.431299994234
+    },
+    "frame_state_to_ack_ms": {
+      "mean": 1152.25,
+      "median": 1177.0,
+      "p95": 1305
+    },
+    "completion_tokens": {
+      "mean": 33.17857142857143,
+      "median": 33.0,
+      "p95": 38
+    }
+  },
+  "llama": {
+    "decisions": 242,
+    "noop_count": 0,
+    "unique_model_texts": 212,
+    "acks": {
+      "completed": 242
+    },
+    "keys": {
+      "W": 1204,
+      "Space": 535,
+      "Ctrl": 213,
+      "A": 220,
+      "D": 260,
+      "LB": 13,
+      "Tab": 5,
+      "E": 5,
+      "Esc": 4
+    },
+    "ttft_ms": {
+      "mean": 671.5418049581696,
+      "median": 669.9015999911353,
+      "p95": 793.7558999983594
+    },
+    "first_action_ms": {
+      "mean": 773.2041214892453,
+      "median": 769.8590999934822,
+      "p95": 894.7265000315383
+    },
+    "total_ms": {
+      "mean": 912.4316185951418,
+      "median": 907.6543499832042,
+      "p95": 1064.4336999976076
+    },
+    "capture_to_response_ms": {
+      "mean": 969.0790578531975,
+      "median": 963.0252499773633,
+      "p95": 1148.9131999551319
+    },
+    "frame_state_to_ack_ms": {
+      "mean": 1241.2644628099174,
+      "median": 1219.5,
+      "p95": 1481
+    },
+    "completion_tokens": {
+      "mean": 35.892561983471076,
+      "median": 36.0,
+      "p95": 43
+    }
+  }
+}

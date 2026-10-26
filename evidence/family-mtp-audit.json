@@ -1,0 +1,37 @@
+[
+  {
+    "model": "THUSI-Lab/GameScaling-0.8B-S1",
+    "tensor_count": 474,
+    "mtp_keys": []
+  },
+  {
+    "model": "THUSI-Lab/GameScaling-2B-S1",
+    "tensor_count": 618,
+    "mtp_keys": []
+  },
+  {
+    "model": "THUSI-Lab/GameScaling-2B-S3",
+    "tensor_count": 618,
+    "mtp_keys": []
+  },
+  {
+    "model": "THUSI-Lab/GameScaling-9B-S1",
+    "tensor_count": 760,
+    "mtp_keys": []
+  },
+  {
+    "model": "THUSI-Lab/GameScaling-9B-S3",
+    "tensor_count": 760,
+    "mtp_keys": []
+  },
+  {
+    "model": "THUSI-Lab/GameScaling-27B-S1",
+    "tensor_count": 1184,
+    "mtp_keys": []
+  },
+  {
+    "model": "THUSI-Lab/GameScaling-27B-S3",
+    "tensor_count": 1184,
+    "mtp_keys": []
+  }
+]

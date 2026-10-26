@@ -1,0 +1,15 @@
+{
+  "name": "GameScaling",
+  "description": "Index of the GameScaling checkpoints. This repository holds the inference client, prompts and scripts; the weights live in the checkpoint repositories below.",
+  "collection": "https://huggingface.co/collections/THUSI-Lab/gamescaling-model-6acf7c0c6500ebee61a7f872",
+  "checkpoints": {
+    "GameScaling-0.8B-S1": "THUSI-Lab/GameScaling-0.8B-S1",
+    "GameScaling-0.8B-S3": "THUSI-Lab/GameScaling-0.8B-S3",
+    "GameScaling-2B-S1": "THUSI-Lab/GameScaling-2B-S1",
+    "GameScaling-2B-S3": "THUSI-Lab/GameScaling-2B-S3",
+    "GameScaling-9B-S1": "THUSI-Lab/GameScaling-9B-S1",
+    "GameScaling-9B-S3": "THUSI-Lab/GameScaling-9B-S3",
+    "GameScaling-27B-S1": "THUSI-Lab/GameScaling-27B-S1",
+    "GameScaling-27B-S3": "THUSI-Lab/GameScaling-27B-S3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "implementation": {
+    "error": "",
+    "observer_stopped": true,
+    "keys_released": true,
+    "transformer_removed": true,
+    "class_restored": true,
+    "status": "shutdown",
+    "action_id": "a03daef992aa4c32bbb78f3dfaae7353"
+  },
+  "telemetry_stopped": true,
+  "bootstrap_shutdown": true
+}

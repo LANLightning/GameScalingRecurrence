@@ -1,0 +1,64 @@
+{
+  "ports_ready": {
+    "8094": 200,
+    "8095": 200
+  },
+  "adapter_created_after_patched_source": true,
+  "fixed_seed_repeat_equal": true,
+  "seed": 20261026,
+  "outputs": [
+    "\n\n<|action_start|>5 -5 0 ; W ; W ; W ; W ; W ; W",
+    "\n\n<|action_start|>5 -5 0 ; W ; W ; W ; W ; W ; W",
+    "\n\n<|action_start|>5 -5 0 ; W ; W ; W ; W ; W ; W"
+  ],
+  "service_records": [
+    {
+      "pid": "<PROCESS_ID>",
+      "identity": {
+        "exe": "${DEPLOY_ROOT}\\llama-runtime\\llama-server.exe",
+        "created": 134374594430867503
+      },
+      "command": [
+        "${DEPLOY_ROOT}\\llama-runtime\\llama-server.exe",
+        "-m",
+        "${DEPLOY_ROOT}\\models\\gguf\\GameScaling-0.8B-S3-Q8_0.gguf",
+        "--mmproj",
+        "${DEPLOY_ROOT}\\models\\gguf\\mmproj-GameScaling-0.8B-S3-F16.gguf",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8093",
+        "--alias",
+        "gamescaling",
+        "-c",
+        "16384",
+        "-ngl",
+        "99",
+        "--parallel",
+        "1",
+        "--flash-attn",
+        "on",
+        "--image-max-tokens",
+        "512",
+        "--jinja",
+        "--chat-template-file",
+        "${DEPLOY_ROOT}\\models\\GameScaling-0.8B-S3\\chat_template.jinja",
+        "--reasoning-format",
+        "none",
+        "--special",
+        "--no-context-shift"
+      ]
+    },
+    {
+      "pid": "<PROCESS_ID>",
+      "identity": {
+        "exe": "${DEPLOY_ROOT}\\runtime-env\\Scripts\\python.exe",
+        "created": 134374594487591854
+      },
+      "command": [
+        "${DEPLOY_ROOT}\\runtime-env\\Scripts\\python.exe",
+        "${DEPLOY_ROOT}\\tools\\api_adapter.py"
+      ]
+    }
+  ]
+}

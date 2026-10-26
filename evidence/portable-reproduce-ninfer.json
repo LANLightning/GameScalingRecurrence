@@ -1,0 +1,152 @@
+[
+  {
+    "trial": 1,
+    "text": "<think>\n\n</think>\n\n<|action_start|>-267 -98 0 ;   ;   ;   ;   ;   ;  <|action_end|>",
+    "parsed": true,
+    "truncated": false,
+    "mouse": [
+      -267.0,
+      -98.0,
+      0.0
+    ],
+    "steps": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "ttft_ms": 660.109399992507,
+    "first_action_ms": 800.4783999640495,
+    "total_ms": 919.238000002224,
+    "usage": {
+      "completion_tokens": 32,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 1361,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "total_tokens": 1393
+    },
+    "sampling": {
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "seed": 399193537
+    }
+  },
+  {
+    "trial": 2,
+    "text": "<think>\n\n</think>\n\n<|action_start|>-29 -12 0 ; LB ; LB ; LB S ; LB S ; LB S ; LB S<|action_end|>",
+    "parsed": true,
+    "truncated": false,
+    "mouse": [
+      -29.0,
+      -12.0,
+      0.0
+    ],
+    "steps": [
+      [
+        "LB"
+      ],
+      [
+        "LB"
+      ],
+      [
+        "LB",
+        "S"
+      ],
+      [
+        "LB",
+        "S"
+      ],
+      [
+        "LB",
+        "S"
+      ],
+      [
+        "LB",
+        "S"
+      ]
+    ],
+    "ttft_ms": 109.10970001714304,
+    "first_action_ms": 241.62510002497584,
+    "total_ms": 399.8437999980524,
+    "usage": {
+      "completion_tokens": 36,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 1361,
+      "prompt_tokens_details": {
+        "cached_tokens": 1355
+      },
+      "total_tokens": 1397
+    },
+    "sampling": {
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "seed": 180147481
+    }
+  },
+  {
+    "trial": 3,
+    "text": "<think>\n\n</think>\n\n<|action_start|>-87 -27 0 ; D ; D S ; D S ;   ;   ;  <|action_end|>",
+    "parsed": true,
+    "truncated": false,
+    "mouse": [
+      -87.0,
+      -27.0,
+      0.0
+    ],
+    "steps": [
+      [
+        "D"
+      ],
+      [
+        "D",
+        "S"
+      ],
+      [
+        "D",
+        "S"
+      ],
+      [],
+      [],
+      []
+    ],
+    "ttft_ms": 63.0335999885574,
+    "first_action_ms": 194.7163000004366,
+    "total_ms": 323.31669999985024,
+    "usage": {
+      "completion_tokens": 33,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 1361,
+      "prompt_tokens_details": {
+        "cached_tokens": 1355
+      },
+      "total_tokens": 1394
+    },
+    "sampling": {
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "seed": 1398137883
+    }
+  }
+]

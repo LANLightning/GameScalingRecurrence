@@ -1,0 +1,54 @@
+[
+  {
+    "trial": 1,
+    "text": "<think>\n\n</think>\n\n<|action_start|>-20 -7 0 ; LB W ; A LB W ; A LB ; A LB ; A LB ; A LB<|action_end|>",
+    "parsed": true,
+    "truncated": false,
+    "mouse": [
+      -20.0,
+      -7.0,
+      0.0
+    ],
+    "steps": [
+      [
+        "LB",
+        "W"
+      ],
+      [
+        "A",
+        "LB",
+        "W"
+      ],
+      [
+        "A",
+        "LB"
+      ],
+      [
+        "A",
+        "LB"
+      ],
+      [
+        "A",
+        "LB"
+      ],
+      [
+        "A",
+        "LB"
+      ]
+    ],
+    "ttft_ms": 461.0679000033997,
+    "first_action_ms": 586.0221000039019,
+    "total_ms": 751.5247000264935,
+    "usage": {
+      "completion_tokens": 38,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 1361,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "total_tokens": 1399
+    }
+  }
+]

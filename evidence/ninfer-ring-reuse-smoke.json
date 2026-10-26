@@ -1,0 +1,18 @@
+{
+  "valid": true,
+  "text": "<think>\n\n</think>\n\n<|action_start|>-10 2 0 ; LB S ; LB S ; LB S ; LB S ; LB S ; LB S<|action_end|>",
+  "ttft_ms": 321.9260000041686,
+  "first_action_ms": 535.8754000044428,
+  "total_ms": 793.2514999993145,
+  "usage": {
+    "completion_tokens": 37,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 12188,
+    "prompt_tokens_details": {
+      "cached_tokens": 12182
+    },
+    "total_tokens": 12225
+  }
+}

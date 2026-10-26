@@ -1,0 +1,9 @@
+{
+  "model": "THUSI-Lab/GameScaling-0.8B-S3",
+  "revision": "1b89640dcf2ef51fb53ad9338a0725e9622dd200",
+  "safetensors_sha256": "d553c0796833691e32277a937db649eaac39bae9a0028a63c964c12a261c2dfa",
+  "tensor_count": 474,
+  "mtp_keys": [],
+  "config_mtp_num_hidden_layers": 1,
+  "template_equal_to_transformers": true
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "synthetic state-machine validation; no live Minecraft, no real input",
+  "tests": 19,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scenarios": [
+    "__main__.Scenarios.test_complete_intermediate_record_can_precede_final_response",
+    "__main__.Scenarios.test_death_during_generation_rejects_late_intent",
+    "__main__.Scenarios.test_death_interrupts_existing_lease_before_next_step",
+    "__main__.Scenarios.test_disconnect_or_stalled_source_expires_even_without_events",
+    "__main__.Scenarios.test_failed_assertion_does_not_restore_budget",
+    "__main__.Scenarios.test_lease_expires_despite_fresh_samples",
+    "__main__.Scenarios.test_missing_entity_is_not_automatically_confirmed_kill",
+    "__main__.Scenarios.test_non_targetable_ghost_even_without_death_flag",
+    "__main__.Scenarios.test_out_of_order_alive_packet_cannot_undo_death",
+    "__main__.Scenarios.test_pending_and_duplicate_actions_do_not_double_execute",
+    "__main__.Scenarios.test_player_death_and_menu_cancel_attack",
+    "__main__.Scenarios.test_pooled_object_still_allocated_is_not_attackable",
+    "__main__.Scenarios.test_prediction_without_authority_is_insufficient",
+    "__main__.Scenarios.test_range_and_visibility_checked_on_each_step",
+    "__main__.Scenarios.test_recycled_entity_id_requires_new_generation_intent",
+    "__main__.Scenarios.test_sequence_gap_stops_until_full_resync",
+    "__main__.Scenarios.test_source_restart_invalidates_old_plan",
+    "__main__.Scenarios.test_unrelated_world_change_does_not_restart_valid_action",
+    "__main__.Scenarios.test_wrong_instance_cannot_drive_bound_game"
+  ]
+}

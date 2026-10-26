@@ -1,0 +1,62 @@
+
+GameScaling 0.8B：NInfer 本地转换验收与决策延迟
+2026-10-26，Windows，RTX 4070 Laptop 8 GB
+
+结论
+模型已转换为 BF16 .ninfer，并在本地 CUDA 引擎上完成图片输入、流式动作生成、连续历史、长上下文换页和复用测试。部署目录是 ${DEPLOY_ROOT}。当前不是把 llama.cpp 接口改名成 NInfer；运行进程是 ninfer-small\ninfer-serve-small.exe，接口 http://127.0.0.1:8095/v1，model=gamescaling。
+
+如何使用
+1. 双击 START.bat 或 START_NINFER.bat。当前会话服务已启动，重复启动会提示端口占用，不会杀死其他服务。
+2. 双击 TEST_NINFER.bat，用官方 Doom 示例验证图像到动作输出。
+3. Minecraft 使用 MINECRAFT_NINFER.bat。默认只观察并打印动作；进入世界、聚焦窗口，F8 开始/暂停，F9 停止。明确需要执行时，在命令行运行 MINECRAFT_NINFER.bat --execute。--goal 参数可传入自然语言目标。
+4. STOP.bat 只终止本项目记录且进程身份仍匹配的服务。START_LLAMA.bat 保留原 llama.cpp 启动方式；切回时客户端须指定 --base-url http://127.0.0.1:8094/v1。
+实际游戏实例仍按用户确认的 TEST_INSTANCE；本轮未改动其启动配置或 Mod，未进入 Minecraft 实战。观察器目前按前台窗口标题绑定，尚未具备游戏实例 ID 的强绑定。
+
+解决了什么
+NInfer 并非理论上不能加载小模型。原本本机融合版本的多个算子只注册了较大模型的特定维度；Bonsai/27B 能运行不意味着 0.8B 的几何形状也已实现。
+本轮以本机 fusion-20261020 为基础，参考 ByronLeeeee/ninfer-extended 的小模型实现，增加/移植了 1024 隐藏维度的 BF16 投影、GDN 门控和 6144 通道卷积、8/2 头 D256 因果注意力、12 头 D64 视觉注意力及视觉 RoPE，并保留本地融合引擎的 KV 页选择接口。
+前端还对齐了 GameScaling 的思考标记编码。官方空思考前缀与带动作起始文本的前缀，两种输入的 token ID 均与原始 Hugging Face tokenizer 编码逐项一致。动作起止字符串在这个 tokenizer 中不是单一专用 token，不能把字符串看起来像特殊标记等同于原子 token。
+改动在独立 ninfer-small 目录，原 Bonsai 引擎和原构建目录未修改。此二进制按 GameScaling 0.8B 验证，不能当作对任意大模型都兼容的通用替换。当前使用 BF16 权重/BF16 KV；旧 Q8 .ninfer 没有宣布修复或通过验证。
+
+当前优化配置与边界
+CUDA Graph 开启；设备校准关闭，避免针对无关大模型做全套启动校准。每张图最多 512 合并视觉 token；客户端默认 854×480、2 轮历史；SSE 实时接收。
+逻辑上下文上限 32768，设备 KV 容量 8192，Host KV 配额 512 MiB；启用 NINFER_KV_RING、NINFER_KV_REUSE_HOSTBACKED、NINFER_TERNARY_KVMEM，窗口 4096、检索 2048。名称含 TERNARY 不表示本模型已做三值量化；这里沿用原融合分支的检索开关。
+长输入实测发现原分支的共享前缀快照不能容纳已换出显存的 KV 页。因此默认 --max-shared-prefixes 0，保留私有会话缓存与 Host 换页。没有删除快照断言或伪造驻留状态。
+12,188 token 输入首次约 1.86 s 完成，再次约 0.79 s，报告缓存复用 12,182 token，且产生完整动作。它证明这两次请求的换页/复用路径可运行，不证明所有长历史检索都无损或所有游戏任务质量不降。
+流式传输不是隐藏层决策。现在记录了首个完整动作分段出现时间，但游戏执行器仍等完整动作后才执行；尚未接入“边生成、边由实时游戏状态断言放行”的控制链。
+
+验证
+新增投影、SwiGLU、门控、视觉注意力：独立 FP64 参考计算通过。
+因果注意力：32 个案例通过，覆盖批量、有效尾部掩码、缓存精确写回和不同可见长度。
+6144 通道卷积：T=1/9/128，两种状态别名形式通过，最终状态精确一致；D64 视觉 RoPE 的独立参考测试通过。
+前缀模板、token ID 对齐验证通过。SSE 服务错误和提前断流会抛出异常，不再把空回复当作成功决策；3 项协议测试通过。
+最终启动配置下离线决策 30/30 输出可解析，llama.cpp 对照也为 30/30。格式正确不等于游戏战术正确。
+
+决策速度（毫秒）
+同图、重置对话：NInfer 328.4 ms；llama.cpp Q8 253.3 ms；NInfer 首个完整分段 163.8 ms。
+同图、追加历史：NInfer 355.1 ms；llama.cpp Q8 294.8 ms；NInfer 首个完整分段 183.0 ms。
+JPEG 压缩变体、重置对话：NInfer 452.6 ms；llama.cpp Q8 345.3 ms；NInfer 首个完整分段 288.0 ms。
+以上为 10 次/场景、排除各场景第 1 次后的中位数。完整耗时包含客户端图像编码和请求处理，不含屏幕抓取及动作执行。首个完整分段表示鼠标三元组与第一个按键组已收齐，未提前执行。没有用 TTFT 充当可行动决策延迟。
+数据来自同一张官方 Doom 图；JPEG 变体只是压缩质量变化，不是真实游戏视频。两个引擎测试顺序执行，但都驻留显存；NInfer 为 BF16，llama.cpp 为 Q8，生成长度和具体动作也会不同，所以这是当前两套部署的端到端对照，不能单独归因为引擎效率。
+当前结果不支持“NInfer 必然更快”。这版小模型因果解码复用了已验证的 prompt 内核，BF16 权重带宽也高于 Q8；这些是后续可测的优化方向。要继续提升，优先优化小批量解码路径、控制图像 token 数和历史长度，再验证量化误差，不能只下调延迟而忽略动作质量。
+
+NInfer 与 vLLM
+vLLM 没有在本机取得实测结果。本次 wsl --list --quiet 返回 Wsl/E_ACCESSDENIED，无法确认/使用可工作的 Linux 运行环境；这不等于断言用户没有安装 WSL。vLLM 官方安装文档仍要求 Linux，Windows 可通过 WSL 或社区移植运行。
+两者都是推理引擎，运行同一模型时不会凭空增加规划能力、世界坐标读取能力或创造力。GameScaling 是决策模型；NInfer、vLLM 是执行它的基础设施。
+因此目前不能给出“NInfer 比 vLLM 快几倍”的结论。公平实测需要同一 GPU、同一 BF16 权重、同一模板、同一图像 token 数、相同采样/停止条件，并记录完整动作、首段动作、缓存命中、图像变化及实际 Minecraft 渲染争用。vLLM 对并发/批处理的支持并不自动等于单玩家最低延迟；NInfer 的单 GPU 定制也不自动胜过 vLLM。
+已提供 benchmark_decisions.py，后续可对 vLLM 的 OpenAI 接口复用测试；运行 benchmark_decisions.py --backend vllm --base-url http://127.0.0.1:8000/v1 --name vllm-bf16 会使用 vLLM 的 continue_final_message 语义；该分支尚未连接实际 vLLM 验证。
+
+UI、建造任务与状态中间件的后续边界
+自然语言目标可以通过提示词传入，现有 Minecraft 启动器已有 --goal。比如“建一个村民小屋”可以成为目标，但 0.8B 模型是否能长程规划、采集材料并完成建造，需要实战验证；本轮未证明它具备可靠建造能力。
+通用 UI 层适合统一为“角色/文字/矩形/父子关系/可操作性/来源/置信度”的语义树：引擎可访问性或 UI 接口提供真实层级，像素检测提供近似层级。ImGui、Minecraft 自绘界面等未必有能直接读取的持久控件树，不能承诺通用恢复所有游戏的原生 UI 树。
+不需要先修改运行时机器码才能创造建筑。对 Minecraft，优先考虑正常放置动作或明确的游戏接口，再提供平面图/线框预览、材料清单和确认后的执行。直接改机器码本身不会自动解决实体注册、物理、存档及同步。
+此前 state_guard.py 中的状态版本、租约、断言和回放原型仍保留，但尚未接入实际 Minecraft 状态来源；不能把其合成测试当作游戏实时验证。UI 树、游戏桥、增量动作断言执行、建筑预览按本轮优先级延期。
+用户提供的 Laya 链接实际为 Neroued/ninfer；Laya 项目身份未确认，未编造与同名项目的对比。
+
+来源与证据
+https://github.com/ByronLeeeee/ninfer-extended （小模型实现参考，保留许可证）
+https://github.com/1314521gjy/ninfer-fusion-kvmem （用户本地融合方案来源）
+https://github.com/Neroued/ninfer
+https://github.com/THUSI-Lab/GameScaling
+https://docs.vllm.ai/en/latest/getting_started/installation/gpu/
+同目录 JSON/JSONL 为本机测试原始记录；source-patch.zip 保存补丁源代码；ninfer-build-manifest.json 保存源码与可执行文件哈希。补丁构建脚本依赖本机已有 fusion 构建库与 CUDA/MSVC 路径，不是独立跨机器安装包。

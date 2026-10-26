@@ -1,0 +1,133 @@
+
+GameScaling 本地部署与技术分析（2026-10-25，Asia/Shanghai）
+
+部署状态
+目录：${DEPLOY_ROOT}
+可用模型：THUSI-Lab/GameScaling-0.8B-S3，Q8_0 文本 + F16 视觉投影。
+实际运行：llama.cpp v0.7.0 / b11669，Vulkan GPU 后端，RTX 4070 Laptop 8GB。
+对外接口：http://127.0.0.1:8094/v1；模型名 gamescaling；无需密钥（客户端强制要求时可填 local）。
+8093 是 llama.cpp 内部后端；8094 是 GameScaling 模板兼容适配层。请使用 8094。
+没有使用 Strata。没有改动已有 Bonsai/NInfer 服务、配置或 Minecraft 整合包文件。
+NInfer 转换文件生成成功，但现有引擎加载失败，不算部署成功；实际可用服务是 llama.cpp。
+本部署使用 ${LOCAL_PATH} 与本目录 python-env。不是可复制到无 Python 机器直接使用的独立便携包。
+
+如何使用
+1. 双击 ${DEPLOY_ROOT}\START.bat，保持启动窗口运行。若接口已在运行，不要重复启动。
+2. 双击 TEST.bat，使用官方 Doom 样例截图测试模型返回动作，结果在 reports\streaming-test.json。
+3. 使用 PCL 正常启动你的 TEST_INSTANCE，进入单人世界。
+4. 双击 MINECRAFT.bat：默认只观察、打印动作，不发送键鼠。
+5. 把 Minecraft 放到前台，按 F8 开始/暂停；F9 结束。
+6. 要执行动作，在命令提示符运行：
+   ${DEPLOY_ROOT}\MINECRAFT.bat --execute --title "Minecraft" --goal "Explore nearby terrain and stay alive."
+   如果窗口标题没有 Minecraft，把 --title 改为实际标题中的一段文字。
+7. STOP.bat 停止本部署保存并核验过进程身份的后端和适配层；也可在 START 窗口 Ctrl+C。
+
+游戏脚本的范围
+客户端区域截图经本地接口送入模型；每次完整、合法动作返回后执行 6 个子步骤。
+脚本仅在匹配标题的前台窗口操作；切换窗口、暂停或结束会释放按键。
+推理期间不继续保持上个动作。超过默认 2 秒的陈旧决策不会执行；可用 --max-age 调整。
+默认每次运行最多 30 次决策，--steps 可调整。日志：logs\minecraft-decisions.jsonl。
+滚轮/鼠标输出按实际游戏客户区尺寸还原；原始鼠标输入、游戏灵敏度和模组仍可能影响瞄准，需要实测校准。
+已创建专用 Minecraft 提示词 minecraft-prompt.txt；默认目标为探索并存活。
+未启动整合包进入世界，未验证实际游玩成功率、移动距离、鼠标校准或 Mod 兼容性。
+读取到版本 JSON 为 Minecraft 1.21.1 / Java 21，目录中存在 NeoForge 命名模组；运行时加载器尚未核验。
+
+已完成的验证
+- 官方 14 项离线测试全部通过。
+- 官方客户端真实图片请求 3/3 可解析；额外 SSE 流式测试 3/3 可解析。
+- 自建序列化与 Transformers 对同一多轮消息的 continue_final_message 输出逐字符相同。
+- 适配层绕过 llama.cpp 自动聊天处理造成的重复 <think>，使用原始 checkpoint 模板；没有把它换成通用 Qwen 模板。
+- 无 KV 前缀复用：1361 输入 token，3 次约 714、453、422 ms，均可解析；解码约 150 token/s。
+- 同图强缓存的流式请求：约 757、348、286 ms，1357/1361 输入 token 命中缓存。
+- 修复协议并重启后，连续三轮图像—动作历史测试 3/3 通过：第一轮约 17.8 秒，后两轮约 393、448 ms。每次重启均应先用 TEST.bat 预热。
+- 上述是同一静态 Doom 样例的接口测试；图像可有其他缓存，且不含游戏截图/动作执行耗时，不能当成实时 Minecraft 帧率。
+- 重启后健康检查通过。GPU 总占用约 2.4GB，包含桌面等其他程序，并非精确的模型独占显存。
+证据：reports\model-audit.json、family-mtp-audit.json、streaming-test.json、no-kv-cache-test.json；logs\official-live-test.log。
+
+NInfer + KVMem + streaming 的核对结果
+实际核对并复制了你本地的：
+${ENGINE_BASELINE}\Bonsai-Swift-Portable\engines\sm89-fusion-20261020\ninfer-serve-89.exe
+对应源码：${ENGINE_BASELINE}\build-tools\engine-updates\fusion-20261020\source\src-tree\fusion-engine-src
+使用其转换工具，生成 models\ninfer\gamescaling-0.8b-s3-q8.ninfer（1,521,412,096 字节）。文本 Q8，视觉 BF16，无 MTP。
+本目录 converter 是独立副本。修复转换工具缺少 artifact identity 的问题，以及沙箱环境不允许硬链接时的 Windows 文件发布方式；原有源码没有修改。
+真实加载错误：text/layers/0: input projection: unsupported logical projection geometry
+根因在 src\ops\weight_input.cpp 的 input_projection：检查固定 27B Dense / 35B MoE 投影尺寸。
+0.8B 的 hidden_size=1024，无法通过；配置解析和文件转换成功并不等于计算内核支持。
+2B/9B 也不能仅因 Qwen3.5 架构同名就保证支持。要支持小模型，需要适配融合投影、GDN、视觉尺寸及相应执行路径，并做数值验证。
+27B 的文本尺寸更接近现有路径，但官方 BF16 权重约 54.7GB；普通 4bit 仅原始权重理论下限也约 13.5GB，超过本机 8GB。
+不能把 Bonsai 的特殊三值压缩效果自动迁移到 GameScaling，也不能把现有 Swift 权重重命名当作 GameScaling。
+现有转换制品和错误日志作为兼容性证据保留，见 logs\server.log。未启动的 NInfer 制品不要当作可用模型。
+因此本次落实的是：llama.cpp + 多模态模板适配 + SSE streaming。它没有运行你那版 NInfer KVMem。
+
+MTP：全部八个官方检查点的核验
+0.8B S1/S3：474 个权重张量；2B S1/S3：618；9B S1/S3：760；27B S1/S3：1184。
+通过 safetensors 头或分片索引逐一检查，均没有 MTP/draft/nextn 张量；本次没有使用任何外置预测头。
+0.8B-S3 配置虽然写有 mtp_num_hidden_layers=1，实际权重并不包含该头。
+结论：这些公开检查点不能直接使用原生 MTP 推测解码。六段动作是 action chunking，不是一次前向预测多个 token 的 MTP。
+额外训练或移植匹配的 draft/MTP 头是后续实验；原始 Qwen 头与续训后的隐藏状态分布未必匹配，接受率和净速度必须测量。
+推测解码一般由主模型验证候选；不应把未经验证的草稿动作提前送进游戏。
+
+决策是怎么来的
+官方训练/评测使用 Qwen3.5 视觉语言骨干，官方发布脚本实测 vLLM 0.17.0；论文评测通过 H200 集群的 vLLM API。
+它不是依赖 vLLM 才具有游戏能力：权重、视觉处理、tokenizer、聊天模板和动作协议才是需要保持一致的部分。
+输入为游戏规则/目标、当前截图、历史截图与动作。视觉编码器提供图像特征，语言骨干自回归产生可选推理及结构化动作。
+训练采用 assistant 回复上的 next-token prediction，学习人类轨迹中的操作；部分轨迹附有稀疏推理说明。并非实时搜索整棵游戏状态树。
+一次动作规划覆盖约 200ms：6 组键/鼠标按钮，每组约 33ms，另有该动作块的鼠标横纵位移和滚轮。
+官方客户端默认保留 5 个历史回合。本地游戏入口为减轻延迟使用 2 个历史回合、854x480 图像、关闭显式思考、最多 256 输出 token。
+训练/协议的 5Hz 观察和 30Hz 子动作，不是这台机器已经达到的推理速度保证。
+
+“更深层数据”能力
+模型默认只看到你送进去的图像和文字。没有自动读取 Minecraft 进程内存、方块地图、实体列表、玩家 XYZ 或服务器状态的能力。
+网络隐藏状态、GDN recurrent state、KV cache 都是模型的内部表示，不是游戏引擎的真实状态。
+可以用客户端 Mod、游戏开发接口或受控测试环境导出 position、velocity、yaw/pitch、health、inventory、block/entity 等信息，再由适配器提供给模型。
+仅追加文本可做零样本实验，但它主要按截图+键鼠轨迹训练；长期可靠使用结构化状态仍需匹配数据微调与评测。
+如果能拿到真实碰撞、导航网格和目标坐标，低层控制器通常应直接使用这些数据，无需让模型重复猜测。
+
+XYZ / 矩阵 / aim 方案
+可以设计这种控制接口，但分两条路线：
+A. 不重训：仍由 GameScaling 输出训练过的键鼠符号；在执行器把它们映射成局部移动向量、世界速度和视角增量。模型内部动作语义未变。
+B. 改动作空间：让策略输出 waypoint_xyz、velocity_local、look_direction 或 target_xyz；用相应轨迹标签微调/训练，再接低层控制器。
+仅改提示词，把 W 改名为 X 或把鼠标 X/Y 改成世界 XYZ，不会自动获得这种能力；动作解析器、历史记录、训练目标均需一致更改。
+
+具体数学：
+给出玩家位置 p 和相机旋转 R，可构造 4x4 相机/角色到世界的齐次变换 T=[R p; 0 1]。
+键盘方向可先写成局部二维输入 (D-A, W-S)，归一化后乘移动速度，通过角色 yaw 的旋转映射到世界平面。
+站立、走路、冲刺、空中、游泳、载具、碰撞及对角速度都需要执行器按游戏物理处理。移动到世界坐标不等于传送到该坐标。
+
+aim 推荐为单位视线方向 d，或者目标点 q。若已知眼睛位置 p_eye，则 d=(q-p_eye)/||q-p_eye||。
+屏幕中心对应一条射线，而非唯一三维目标点：q=p_eye+lambda*d。没有深度或目标位置时，lambda 不可由单个中心像素唯一确定。
+已知相机内参 K 和姿态 R 时，任意像素的世界射线方向为 normalize(R*K^-1*[u,v,1])。
+“视线中心的法向量”可理解为相机前向单位向量；更准确的接口名是 look_direction，而非目标表面的法向量。
+仅方向有两个自由度，不能表达位置、目标距离或相机 roll；完整姿态可用四元数或旋转矩阵。
+
+Minecraft 约定：+Y 向上；yaw=0 指向 +Z，yaw=+90 指向 -X；pitch 向下为正。
+d=(-sin(yaw)*cos(pitch), -sin(pitch), cos(yaw)*cos(pitch))。
+目标角度 yaw=atan2(-dx,dz)，pitch=atan2(-dy,sqrt(dx^2+dz^2))。
+角度差要 wrap 到 [-180,180)，再用经过灵敏度标定的控制器生成相对鼠标输入，或使用 Mod 接口更新视角。
+不能直接拿鼠标屏幕千分比等同于 yaw/pitch；raw mouse、灵敏度和镜头模式会改变关系。
+tools\world_coordinates.py 提供这些转换，并通过基本方向检查；它不负责获取实时世界状态、碰撞或寻路。
+
+是否会更快
+MTP 优化 token 解码；KVMem 主要优化模型上下文存储/检索；SSE streaming 让 token 更早送达。它们不是同一件事。
+完整决策延迟包含截图/编码、视觉编码、历史 prefill、动作解码、传输、动作执行。35 个输出 token 很短，视觉和 prefill 常常不可忽略。
+streaming 不等于完整动作已可执行。本地脚本等待动作块完整并解析成功后才执行，避免半个动作改变游戏。
+滚动历史会删除最早图像，破坏长前缀的相同部分，不能把同图重复请求的缓存速度当成持续游戏速度。
+200ms 动作块对应理想 5 次决策/秒，本机当前静态测试约 0.42–0.71s，尚不满足稳定 5Hz；更适合可暂停/低节奏实验。
+如果未来移植 NInfer 小尺寸路径，应使用相同图像、历史长度、精度和采样比较端到端延迟、动作合法率、游戏成绩，而不只比较纯文本 tok/s。
+
+官方及源码来源
+模型/客户端：https://huggingface.co/THUSI-Lab/GameScaling
+所部署权重：https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3
+论文：https://arxiv.org/html/2610.28698v1
+项目：https://gamescaling.github.io/
+用户本地引擎对应仓库：https://github.com/1314521gjy/ninfer-fusion-kvmem
+NInfer 上游：https://github.com/Neroued/ninfer
+llama.cpp：https://github.com/ggml-org/llama.cpp/releases/tag/v0.7.0
+vLLM 平台说明：https://docs.vllm.ai/en/latest/getting_started/installation/gpu/
+
+当前限制
+- NInfer + KVMem 的指定组合未能加载小模型，已给出真实错误；未声称完成这部分兼容移植。
+- Minecraft 是已准备接入，尚未实际进入世界玩游戏验收。
+- 未训练新的坐标动作模型，也没有安装状态读取 Mod。
+- 未将 Q8 与原 BF16 做游戏成绩一致性评测；动作可解析不等于决策一定正确。
+

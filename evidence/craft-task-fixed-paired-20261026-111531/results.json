@@ -1,0 +1,1078 @@
+[
+  {
+    "backend": "ninfer",
+    "episode": "ninfer-aac33da9",
+    "reason": "action_aborted",
+    "elapsed_seconds": 64.86606400000164,
+    "active_seconds": 64.86606400000164,
+    "interruptions": [],
+    "decision_count": 56,
+    "start": {
+      "sequence": 1027,
+      "wall_ms": 1792983879966,
+      "mono_ns": 300852239128000,
+      "episode": "ninfer-aac33da9",
+      "position": [
+        -117.39632045356092,
+        102.0,
+        -143.86745234483845
+      ],
+      "yaw": 80.24989318847656,
+      "pitch": 10.050000190734863,
+      "flying": false,
+      "on_ground": true,
+      "in_water": false,
+      "dimension": "ResourceKey[minecraft:dimension / minecraft:overworld]",
+      "game_tick": 151867,
+      "ready": true,
+      "action_id": "74253544508e49129140e96df480af1d",
+      "action_status": "episode_set",
+      "error": "",
+      "held": [],
+      "ray_type": "MISS",
+      "ray_block": [
+        -124.0,
+        102.0,
+        -143.0
+      ],
+      "ray_water": false,
+      "ray_fluid": "minecraft:empty",
+      "ray_source": false,
+      "inventory": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "selected_slot": 0,
+      "health": 20.0,
+      "mode": "CREATIVE",
+      "day_time": 8884,
+      "screen": null,
+      "cursor": [
+        427.0,
+        240.0
+      ],
+      "window": [
+        854.0,
+        480.0
+      ],
+      "menu": "net.minecraft.world.inventory.InventoryMenu",
+      "carried": {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      "crafting_grid": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "crafting_result": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "shift_down": false
+    },
+    "end": {
+      "sequence": 2244,
+      "wall_ms": 1792983944812,
+      "mono_ns": 300917084161700,
+      "episode": "idle",
+      "position": [
+        -138.24423682285757,
+        104.0,
+        -157.69999998807907
+      ],
+      "yaw": 236.0196533203125,
+      "pitch": 5.766015529632568,
+      "flying": false,
+      "on_ground": true,
+      "in_water": false,
+      "dimension": "ResourceKey[minecraft:dimension / minecraft:overworld]",
+      "game_tick": 153158,
+      "ready": false,
+      "action_id": "f1239925d3864b4b83b09a6d63178c9c",
+      "action_status": "stopped",
+      "error": "",
+      "held": [],
+      "ray_type": "BLOCK",
+      "ray_block": [
+        -137.0,
+        105.0,
+        -159.0
+      ],
+      "ray_water": false,
+      "ray_fluid": "minecraft:empty",
+      "ray_source": false,
+      "inventory": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "selected_slot": 0,
+      "health": 20.0,
+      "mode": "CREATIVE",
+      "day_time": 8884,
+      "screen": "net.minecraft.client.gui.screens.PauseScreen",
+      "cursor": [
+        506.0,
+        248.0
+      ],
+      "window": [
+        854.0,
+        480.0
+      ],
+      "menu": "net.minecraft.world.inventory.InventoryMenu",
+      "carried": {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      "crafting_grid": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "crafting_result": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "shift_down": false
+    },
+    "observer_live": {
+      "events": {},
+      "peak_cobblestone": 0,
+      "peak_oak_logs": 0,
+      "peak_crafting_tables": 0,
+      "inventory_opened": false,
+      "creative_screen_seen": false,
+      "craft_grid_seen": false,
+      "ever_flying": false,
+      "min_distance_to_reference_water": 41.55483662736504,
+      "success": false
+    },
+    "recorder_started_wall_ms": 1792983879317,
+    "video_exit_code": 0,
+    "observer": {
+      "events": {},
+      "peak_cobblestone": 0,
+      "peak_oak_logs": 0,
+      "peak_crafting_tables": 0,
+      "inventory_opened": false,
+      "creative_screen_seen": false,
+      "craft_grid_seen": false,
+      "ever_flying": false,
+      "min_distance_to_reference_water": 41.38237580894884,
+      "success": false
+    },
+    "samples": 1213,
+    "path_xyz": 77.30523347339941,
+    "path_xz": 30.636607635702852,
+    "max_sample_gap_ms": 320,
+    "telemetry_errors": 0,
+    "video_probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 854,
+          "height": 480,
+          "avg_frame_rate": "10/1",
+          "nb_frames": "653"
+        }
+      ],
+      "format": {
+        "duration": "65.300000",
+        "size": "6760214"
+      }
+    }
+  },
+  {
+    "backend": "llama",
+    "episode": "llama-a2943f06",
+    "reason": "time_limit",
+    "elapsed_seconds": 301.19575999997323,
+    "active_seconds": 301.19575999997323,
+    "interruptions": [],
+    "decision_count": 242,
+    "start": {
+      "sequence": 389,
+      "wall_ms": 1792984620575,
+      "mono_ns": 301592847181400,
+      "episode": "llama-a2943f06",
+      "position": [
+        -117.39632045356092,
+        102.0,
+        -143.86745234483845
+      ],
+      "yaw": 80.24989318847656,
+      "pitch": 10.050000190734863,
+      "flying": false,
+      "on_ground": true,
+      "in_water": false,
+      "dimension": "ResourceKey[minecraft:dimension / minecraft:overworld]",
+      "game_tick": 166477,
+      "ready": true,
+      "action_id": "91517f716b144099bf0e2f4c0be78ccb",
+      "action_status": "episode_set",
+      "error": "",
+      "held": [],
+      "ray_type": "MISS",
+      "ray_block": [
+        -124.0,
+        102.0,
+        -143.0
+      ],
+      "ray_water": false,
+      "ray_fluid": "minecraft:empty",
+      "ray_source": false,
+      "inventory": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "selected_slot": 0,
+      "health": 20.0,
+      "mode": "CREATIVE",
+      "day_time": 8884,
+      "screen": null,
+      "cursor": [
+        427.0,
+        240.0
+      ],
+      "window": [
+        854.0,
+        480.0
+      ],
+      "menu": "net.minecraft.world.inventory.InventoryMenu",
+      "carried": {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      "crafting_grid": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "crafting_result": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "shift_down": false
+    },
+    "end": {
+      "sequence": 5754,
+      "wall_ms": 1792984921774,
+      "mono_ns": 301894045750000,
+      "episode": "idle",
+      "position": [
+        -161.7325973889062,
+        96.0,
+        -152.80841163304027
+      ],
+      "yaw": 171.8419647216797,
+      "pitch": 19.853973388671875,
+      "flying": false,
+      "on_ground": true,
+      "in_water": false,
+      "dimension": "ResourceKey[minecraft:dimension / minecraft:overworld]",
+      "game_tick": 172385,
+      "ready": true,
+      "action_id": "ad0e3ff71e64431494a4e954aac1f1cf",
+      "action_status": "stopped",
+      "error": "",
+      "held": [],
+      "ray_type": "BLOCK",
+      "ray_block": [
+        -163.0,
+        95.0,
+        -158.0
+      ],
+      "ray_water": false,
+      "ray_fluid": "minecraft:empty",
+      "ray_source": false,
+      "inventory": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "selected_slot": 0,
+      "health": 20.0,
+      "mode": "CREATIVE",
+      "day_time": 8884,
+      "screen": null,
+      "cursor": [
+        427.0,
+        240.0
+      ],
+      "window": [
+        854.0,
+        480.0
+      ],
+      "menu": "net.minecraft.world.inventory.InventoryMenu",
+      "carried": {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      "crafting_grid": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        },
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "crafting_result": [
+        {
+          "count": 0,
+          "id": "minecraft:air"
+        }
+      ],
+      "shift_down": false
+    },
+    "observer_live": {
+      "events": {},
+      "peak_cobblestone": 0,
+      "peak_oak_logs": 0,
+      "peak_crafting_tables": 0,
+      "inventory_opened": true,
+      "creative_screen_seen": true,
+      "craft_grid_seen": false,
+      "ever_flying": true,
+      "min_distance_to_reference_water": 29.090539471040028,
+      "success": false
+    },
+    "recorder_started_wall_ms": 1792984619889,
+    "video_exit_code": 0,
+    "observer": {
+      "events": {},
+      "peak_cobblestone": 0,
+      "peak_oak_logs": 0,
+      "peak_crafting_tables": 0,
+      "inventory_opened": true,
+      "creative_screen_seen": true,
+      "craft_grid_seen": false,
+      "ever_flying": true,
+      "min_distance_to_reference_water": 28.926875838589467,
+      "success": false
+    },
+    "samples": 5360,
+    "path_xyz": 310.91064933240597,
+    "path_xz": 172.1481329111522,
+    "max_sample_gap_ms": 1413,
+    "telemetry_errors": 0,
+    "video_probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 854,
+          "height": 480,
+          "avg_frame_rate": "30040/3017",
+          "nb_frames": "3004"
+        }
+      ],
+      "format": {
+        "duration": "301.700000",
+        "size": "31895889"
+      }
+    }
+  }
+]

@@ -1,0 +1,1297 @@
+{
+  "GameScaling-0.8B-S3-Q8_0.gguf": {
+    "file_bytes": 1082015776,
+    "types": {
+      "Q8_0": {
+        "tensors": 188,
+        "elements": 1006174208,
+        "bytes": 1069060096
+      },
+      "F32": {
+        "tensors": 133,
+        "elements": 498496,
+        "bytes": 1993984
+      }
+    },
+    "special_tensors": [
+      {
+        "name": "output.weight",
+        "type": "Q8_0",
+        "elements": 254279680
+      },
+      {
+        "name": "blk.0.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.0.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.0.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.0.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.0.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.0.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.1.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.1.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.1.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.1.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.1.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.1.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.10.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.10.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.10.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.10.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.10.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.10.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.11.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.11.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.11.attn_k_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.11.attn_output.weight",
+        "type": "Q8_0",
+        "elements": 2097152
+      },
+      {
+        "name": "blk.11.attn_q_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.12.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.12.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.12.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.12.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.12.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.12.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.13.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.13.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.13.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.13.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.13.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.13.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.14.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.14.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.14.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.14.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.14.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.14.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.15.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.15.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.15.attn_k_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.15.attn_output.weight",
+        "type": "Q8_0",
+        "elements": 2097152
+      },
+      {
+        "name": "blk.15.attn_q_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.16.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.16.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.16.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.16.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.16.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.16.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.17.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.17.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.17.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.17.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.17.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.17.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.18.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.18.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.18.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.18.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.18.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.18.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.19.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.19.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.19.attn_k_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.19.attn_output.weight",
+        "type": "Q8_0",
+        "elements": 2097152
+      },
+      {
+        "name": "blk.19.attn_q_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.2.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.2.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.2.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.2.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.2.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.2.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.20.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.20.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.20.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.20.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.20.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.20.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.21.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.21.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.21.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.21.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.21.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.21.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.22.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.22.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.22.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.22.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.22.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.22.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.23.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.23.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.23.attn_k_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.23.attn_output.weight",
+        "type": "Q8_0",
+        "elements": 2097152
+      },
+      {
+        "name": "blk.23.attn_q_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.3.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.3.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.3.attn_k_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.3.attn_output.weight",
+        "type": "Q8_0",
+        "elements": 2097152
+      },
+      {
+        "name": "blk.3.attn_q_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.4.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.4.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.4.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.4.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.4.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.4.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.5.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.5.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.5.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.5.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.5.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.5.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.6.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.6.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.6.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.6.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.6.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.6.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.7.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.7.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.7.attn_k_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.7.attn_output.weight",
+        "type": "Q8_0",
+        "elements": 2097152
+      },
+      {
+        "name": "blk.7.attn_q_norm.weight",
+        "type": "F32",
+        "elements": 256
+      },
+      {
+        "name": "blk.8.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.8.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.8.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.8.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.8.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.8.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.9.attn_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "blk.9.ssm_a",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.9.ssm_conv1d.weight",
+        "type": "F32",
+        "elements": 24576
+      },
+      {
+        "name": "blk.9.ssm_dt.bias",
+        "type": "F32",
+        "elements": 16
+      },
+      {
+        "name": "blk.9.ssm_norm.weight",
+        "type": "F32",
+        "elements": 128
+      },
+      {
+        "name": "blk.9.post_attention_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "output_norm.weight",
+        "type": "F32",
+        "elements": 1024
+      }
+    ]
+  },
+  "mmproj-GameScaling-0.8B-S3-F16.gguf": {
+    "file_bytes": 204987200,
+    "types": {
+      "F32": {
+        "tensors": 102,
+        "elements": 1895680,
+        "bytes": 7582720
+      },
+      "F16": {
+        "tensors": 52,
+        "elements": 98697216,
+        "bytes": 197394432
+      }
+    },
+    "special_tensors": [
+      {
+        "name": "v.blk.0.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.0.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.0.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.0.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.0.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.0.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.0.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.0.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.1.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.1.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.1.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.1.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.1.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.1.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.1.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.1.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.10.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.10.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.10.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.10.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.10.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.10.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.10.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.10.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.11.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.11.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.11.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.11.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.11.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.11.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.11.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.11.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.2.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.2.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.2.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.2.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.2.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.2.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.2.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.2.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.3.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.3.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.3.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.3.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.3.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.3.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.3.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.3.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.4.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.4.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.4.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.4.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.4.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.4.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.4.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.4.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.5.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.5.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.5.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.5.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.5.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.5.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.5.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.5.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.6.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.6.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.6.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.6.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.6.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.6.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.6.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.6.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.7.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.7.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.7.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.7.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.7.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.7.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.7.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.7.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.8.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.8.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.8.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.8.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.8.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.8.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.8.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.8.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.9.attn_out.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.9.attn_qkv.bias",
+        "type": "F32",
+        "elements": 2304
+      },
+      {
+        "name": "v.blk.9.ffn_up.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "v.blk.9.ffn_down.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.9.ln1.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.9.ln1.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.9.ln2.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.blk.9.ln2.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "mm.0.bias",
+        "type": "F32",
+        "elements": 3072
+      },
+      {
+        "name": "mm.2.bias",
+        "type": "F32",
+        "elements": 1024
+      },
+      {
+        "name": "v.post_ln.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.post_ln.weight",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.patch_embd.bias",
+        "type": "F32",
+        "elements": 768
+      },
+      {
+        "name": "v.position_embd.weight",
+        "type": "F32",
+        "elements": 1769472
+      }
+    ]
+  },
+  "gamescaling-0.8b-s3-bf16.ninfer": {
+    "file_bytes": 1717196800,
+    "types": {
+      "bf16": {
+        "tensors": 365,
+        "elements": 852985344,
+        "bytes": 1705970688
+      },
+      "fp32": {
+        "tensors": 36,
+        "elements": 576,
+        "bytes": 2304
+      }
+    },
+    "shared_bindings": {
+      "text/token_embedding": {
+        "object": "weight/000090"
+      },
+      "vision/patch_embedding": {
+        "object": "weight/000272"
+      },
+      "vision/patch_embedding_bias": {
+        "object": "weight/000273"
+      },
+      "vision/position_embedding": {
+        "object": "weight/000274"
+      },
+      "text/output_head": {
+        "object": "weight/000090"
+      }
+    }
+  },
+  "gguf_tied_weights_stored_twice": {
+    "output.weight": {
+      "type": "Q8_0",
+      "bytes": 270172160,
+      "sha256": "883343f2eb1595f89d8d6a8e6c07473f41920c89b06a82c561569b1b13e5c13a"
+    },
+    "token_embd.weight": {
+      "type": "Q8_0",
+      "bytes": 270172160,
+      "sha256": "883343f2eb1595f89d8d6a8e6c07473f41920c89b06a82c561569b1b13e5c13a"
+    }
+  },
+  "parameter_count_reconciliation": {
+    "ninfer_unique_elements": 852985920,
+    "gguf_stored_elements": 1107265600,
+    "duplicated_tied_output_head_elements": 254279680,
+    "gguf_after_deduplicating_shared_head": 852985920,
+    "equal": true
+  }
+}

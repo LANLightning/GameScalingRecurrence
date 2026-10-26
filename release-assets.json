@@ -1,0 +1,47 @@
+{
+  "tag": "v2026.10.26",
+  "assets": [
+    {
+      "name": "runtime-win-sm89.zip",
+      "bytes": 1175844702,
+      "sha256": "ff51f82b042a9ea9f48e4055225121cae62bcdfaf70d8e7b978c98ddde011571",
+      "install": true,
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/runtime-win-sm89.zip"
+    },
+    {
+      "name": "model-ninfer-bf16.zip",
+      "bytes": 1791094801,
+      "sha256": "1e879d5fafa2be021e0490d5fd50f384c3e7b2d62f17a02ba4b88186277a36c0",
+      "install": true,
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/model-ninfer-bf16.zip"
+    },
+    {
+      "name": "model-llama-q8.zip",
+      "bytes": 1346974936,
+      "sha256": "6eca82e4fb2c3018120dbfde695869a23fadfadc39b15d2fb5dde05c0b42eb69",
+      "install": true,
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/model-llama-q8.zip"
+    },
+    {
+      "name": "recording-tools.zip",
+      "bytes": 80621671,
+      "sha256": "b42095937fa5b4793e40d8fa53bcfa06db4660c04635549ecd93f617c2b7fd0d",
+      "install": true,
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/recording-tools.zip"
+    },
+    {
+      "name": "verification-evidence.zip",
+      "bytes": 227950045,
+      "sha256": "e4456d4e9d6956c42f996c69bc10ba3aa219b27f3d37c11dd54a6dd404a830b3",
+      "install": false,
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/verification-evidence.zip"
+    },
+    {
+      "name": "comparison-5min.mp4",
+      "bytes": 50520835,
+      "sha256": "698e2660188ff3171c7617f07f8b603eefb6abf9923e8f7908c3c370c106fd32",
+      "install": false,
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/comparison-5min.mp4"
+    }
+  ]
+}

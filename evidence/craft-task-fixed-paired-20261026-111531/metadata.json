@@ -1,0 +1,295 @@
+{
+  "goal": "Walk from your current location to the bank of the nearest water source. Then obtain one full stack (64) of cobblestone and one full stack (64) of oak logs from the Creative inventory. Then craft one crafting table using the logs; taking a ready-made crafting table from Creative inventory does not count. Complete the tasks in this order. Walk rather than fly. Stop when finished.",
+  "prompt_sha256": "795bdda483895ae5b778acdac17f1b16d6550b64e2125d720474ea5ca6d419bb",
+  "config": {
+    "temperature": 1,
+    "top_k": 20,
+    "top_p": 1.0,
+    "min_p": 0.0,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0,
+    "seed_base": 20261026,
+    "reasoning": false,
+    "history_len": 5,
+    "max_tokens": 512,
+    "image_size": [
+      854,
+      480
+    ],
+    "max_decisions": 300,
+    "max_seconds": 300
+  },
+  "models": {
+    "ninfer": {
+      "data": [
+        {
+          "context_window": 32768,
+          "created": 1792983878,
+          "id": "gamescaling",
+          "max_model_len": 32768,
+          "meta": {
+            "ftype": "bf16+fp32",
+            "n_ctx": 32768,
+            "n_ctx_train": 262144,
+            "n_embd": 1024,
+            "n_params": 852985920,
+            "n_vocab": 248320,
+            "size": 1705972992
+          },
+          "modalities": {
+            "vision": true
+          },
+          "object": "model",
+          "owned_by": "ninfer",
+          "status": {
+            "value": "loaded"
+          }
+        }
+      ],
+      "object": "list"
+    },
+    "llama": {
+      "object": "list",
+      "data": [
+        {
+          "id": "gamescaling",
+          "object": "model"
+        }
+      ]
+    }
+  },
+  "recording": {
+    "fps": 10,
+    "audio": false,
+    "speed": 1,
+    "capture": "Minecraft window via FFmpeg gdigrab"
+  },
+  "observer_data_given_to_model": false,
+  "subgoal_feedback": false,
+  "target_water_seed": [
+    -104,
+    62,
+    -150
+  ],
+  "target_water_component_size": 445,
+  "origin": {
+    "position": [
+      -117.39632045356092,
+      102.0,
+      -143.86745234483845
+    ],
+    "yaw": 80.24989,
+    "pitch": 10.05,
+    "wall_ms": 1792983826229,
+    "inventory": [
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      }
+    ],
+    "selected_slot": 0,
+    "health": 20.0,
+    "mode": "CREATIVE",
+    "day_time": 8884,
+    "screen": null,
+    "cursor": [
+      427.0,
+      240.0
+    ],
+    "window": [
+      854.0,
+      480.0
+    ],
+    "menu": "net.minecraft.world.inventory.InventoryMenu",
+    "carried": {
+      "count": 0,
+      "id": "minecraft:air"
+    },
+    "crafting_grid": [
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      },
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      }
+    ],
+    "crafting_result": [
+      {
+        "count": 0,
+        "id": "minecraft:air"
+      }
+    ],
+    "shift_down": false
+  },
+  "note": "Live game input callbacks, temporary virtual-key support. No give/craft/slot-selection API during episodes. Only experiment reset restores saved state between episodes."
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "ninfer-small/ninfer-serve-small.exe",
+    "bytes": 795228672,
+    "sha256": "cbaa593753e7438d2837571532dab443e420beccf1cbe998b144b738b11bf2d2"
+  },
+  {
+    "path": "models/ninfer/gamescaling-0.8b-s3-bf16.ninfer",
+    "bytes": 1717196800,
+    "sha256": "68a8831e7c12dfd2dfc7c9fe4f5bb98508c50b335b9bab6531b1024d3d46c061"
+  },
+  {
+    "path": "models/gguf/GameScaling-0.8B-S3-Q8_0.gguf",
+    "bytes": 1082015776,
+    "sha256": "b590486d5c4c8172eb90ca5f3a802b5bf44a19a8f7a0208420314ff5e78d8773"
+  },
+  {
+    "path": "models/gguf/mmproj-GameScaling-0.8B-S3-F16.gguf",
+    "bytes": 204987200,
+    "sha256": "f98187851bb4873cde7b243b199a92a967b918ecb4b5afe357f782c271baa2f3"
+  },
+  {
+    "path": "models/GameScaling-0.8B-S3/chat_template.jinja",
+    "bytes": 7530,
+    "sha256": "deb2bf853c951adb45817104c86331d06bf05f83827cf5411f594c84422f6fe1"
+  }
+]

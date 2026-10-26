@@ -1,0 +1,3 @@
+Legacy restore failure reproduced: Expecting a stackmap frame at branch target 8
+Observed CHOP-frame failure reproduced: Bad local variable type
+PASS: install enables virtual key; restored bytecode ignores virtual property and preserves original key semantics

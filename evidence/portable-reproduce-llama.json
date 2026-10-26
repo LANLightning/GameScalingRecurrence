@@ -1,0 +1,153 @@
+[
+  {
+    "trial": 1,
+    "text": "<think>\n\n</think>\n\n<|action_start|>0 0 0 ; LB ; LB ;   ;   ;   ;  <|action_end|>",
+    "parsed": true,
+    "truncated": false,
+    "mouse": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "steps": [
+      [
+        "LB"
+      ],
+      [
+        "LB"
+      ],
+      [],
+      [],
+      [],
+      []
+    ],
+    "ttft_ms": 1476.799600000959,
+    "first_action_ms": 1643.7391999643296,
+    "total_ms": 1914.362599956803,
+    "usage": {
+      "prompt_tokens": 1361,
+      "completion_tokens": 29,
+      "total_tokens": 1390,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "sampling": {
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "seed": 1527690077
+    }
+  },
+  {
+    "trial": 2,
+    "text": "<think>\n\n</think>\n\n<|action_start|>-45 -6 0 ; D LB ; D LB ; D LB ; D LB ; D LB ; D LB<|action_end|>",
+    "parsed": true,
+    "truncated": false,
+    "mouse": [
+      -45.0,
+      -6.0,
+      0.0
+    ],
+    "steps": [
+      [
+        "D",
+        "LB"
+      ],
+      [
+        "D",
+        "LB"
+      ],
+      [
+        "D",
+        "LB"
+      ],
+      [
+        "D",
+        "LB"
+      ],
+      [
+        "D",
+        "LB"
+      ],
+      [
+        "D",
+        "LB"
+      ]
+    ],
+    "ttft_ms": 244.1003000130877,
+    "first_action_ms": 462.1754999971017,
+    "total_ms": 723.3025999739766,
+    "usage": {
+      "prompt_tokens": 1361,
+      "completion_tokens": 37,
+      "total_tokens": 1398,
+      "prompt_tokens_details": {
+        "cached_tokens": 1357
+      }
+    },
+    "sampling": {
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "seed": 2053485786
+    }
+  },
+  {
+    "trial": 3,
+    "text": "<think>\n\n</think>\n\n<|action_start|>-29 -7 0 ; LB ; LB ; LB ; LB ; LB ; LB<|action_end|>",
+    "parsed": true,
+    "truncated": false,
+    "mouse": [
+      -29.0,
+      -7.0,
+      0.0
+    ],
+    "steps": [
+      [
+        "LB"
+      ],
+      [
+        "LB"
+      ],
+      [
+        "LB"
+      ],
+      [
+        "LB"
+      ],
+      [
+        "LB"
+      ],
+      [
+        "LB"
+      ]
+    ],
+    "ttft_ms": 131.81679998524487,
+    "first_action_ms": 319.32619999861345,
+    "total_ms": 541.1926999804564,
+    "usage": {
+      "prompt_tokens": 1361,
+      "completion_tokens": 31,
+      "total_tokens": 1392,
+      "prompt_tokens_details": {
+        "cached_tokens": 1357
+      }
+    },
+    "sampling": {
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "seed": 3537224201
+    }
+  }
+]
