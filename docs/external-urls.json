@@ -1,0 +1,467 @@
+{
+  "sources": [
+    {
+      "name": "NInfer",
+      "url": "https://github.com/Neroued/ninfer",
+      "role": "推理引擎上游"
+    },
+    {
+      "name": "NInfer fusion + KVMem",
+      "url": "https://github.com/1314521gjy/ninfer-fusion-kvmem",
+      "role": "融合实现与 KVMem 基线",
+      "version": "4e93bb8ab89b583653a9d16235582c688226ff05"
+    },
+    {
+      "name": "Fusion pinned commit",
+      "url": "https://github.com/1314521gjy/ninfer-fusion-kvmem/commit/4e93bb8ab89b583653a9d16235582c688226ff05",
+      "role": "记录的融合上游提交"
+    },
+    {
+      "name": "NInfer extended",
+      "url": "https://github.com/ByronLeeeee/ninfer-extended",
+      "role": "小模型算子及前端实现参考；具体变更见 patches/ninfer-small"
+    },
+    {
+      "name": "GameScaling project",
+      "url": "https://gamescaling.github.io/",
+      "role": "论文项目介绍"
+    },
+    {
+      "name": "GameScaling GitHub",
+      "url": "https://github.com/THUSI-Lab/GameScaling",
+      "role": "官方项目源码与运行流程"
+    },
+    {
+      "name": "GameScaling client",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling",
+      "role": "客户端与动作协议",
+      "version": "f5a05714892307c3e3aefbf6cc2b177e90798a54"
+    },
+    {
+      "name": "GameScaling 0.8B S3",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3",
+      "role": "本次转换与运行的模型",
+      "version": "1b89640dcf2ef51fb53ad9338a0725e9622dd200"
+    },
+    {
+      "name": "Paper on Hugging Face",
+      "url": "https://huggingface.co/papers/2610.28698",
+      "role": "论文入口"
+    },
+    {
+      "name": "Paper HTML",
+      "url": "https://arxiv.org/html/2610.28698v1",
+      "role": "论文原文参考"
+    },
+    {
+      "name": "Qwen3.5 0.8B",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+      "role": "模型卡列出的基础架构；不是本次直接运行的权重"
+    },
+    {
+      "name": "llama.cpp",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "role": "GGUF 转换与推理项目"
+    },
+    {
+      "name": "llama.cpp converter source",
+      "url": "https://github.com/ggml-org/llama.cpp/tree/v0.7.0",
+      "role": "使用的转换器源码版本",
+      "version": "v0.7.0"
+    },
+    {
+      "name": "llama.cpp Vulkan runtime",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11669",
+      "role": "使用的 Windows Vulkan 二进制版本",
+      "version": "b11669"
+    },
+    {
+      "name": "llama.cpp Vulkan x64 archive",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11669/llama-b11669-bin-win-vulkan-x64.zip",
+      "role": "稳定下载地址"
+    },
+    {
+      "name": "FFmpeg recording build",
+      "url": "https://www.gyan.dev/ffmpeg/builds/",
+      "role": "录像／拼接工具发行来源",
+      "version": "7.1 essentials"
+    },
+    {
+      "name": "FFmpeg recording source",
+      "url": "https://github.com/FFmpeg/FFmpeg/commit/b08d7969c5",
+      "role": "录像工具附带 README 指定的源码提交"
+    },
+    {
+      "name": "FFmpeg",
+      "url": "https://github.com/FFmpeg/FFmpeg",
+      "role": "媒体编解码库源码项目；运行库具体文件见 runtime-files.json"
+    },
+    {
+      "name": "ASM",
+      "url": "https://asm.ow2.io/",
+      "role": "Java 字节码变换与栈帧重算",
+      "version": "9.8"
+    },
+    {
+      "name": "ASM Maven artifact",
+      "url": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.8/asm-9.8.jar",
+      "role": "标准依赖发行入口；用于重建桥"
+    },
+    {
+      "name": "Java 21",
+      "url": "https://openjdk.org/projects/jdk/21/",
+      "role": "游戏／桥接所需 Java 版本与标准项目"
+    },
+    {
+      "name": "Java Attach API",
+      "url": "https://docs.oracle.com/en/java/javase/21/docs/api/jdk.attach/com/sun/tools/attach/VirtualMachine.html",
+      "role": "代理加载 API 文档"
+    },
+    {
+      "name": "Java Instrumentation",
+      "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.instrument/java/lang/instrument/Instrumentation.html",
+      "role": "类重转换 API 文档"
+    },
+    {
+      "name": "JVMTI",
+      "url": "https://docs.oracle.com/en/java/javase/21/docs/specs/jvmti.html",
+      "role": "运行时能力分析参考"
+    },
+    {
+      "name": "NeoForge events",
+      "url": "https://docs.neoforged.net/docs/1.21.1/concepts/events/",
+      "role": "游戏事件与版本参考"
+    },
+    {
+      "name": "NeoForge 21.1.265",
+      "url": "https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.265/",
+      "role": "测试目标版本的官方发行入口",
+      "version": "21.1.265"
+    },
+    {
+      "name": "Minecraft Java",
+      "url": "https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc",
+      "role": "测试游戏来源；不随复现包分发",
+      "version": "1.21.1"
+    },
+    {
+      "name": "CUDA",
+      "url": "https://developer.nvidia.com/cuda-toolkit",
+      "role": "NInfer CUDA 运行／构建依赖"
+    },
+    {
+      "name": "MSVC Build Tools",
+      "url": "https://visualstudio.microsoft.com/visual-cpp-build-tools/",
+      "role": "Windows 原生引擎构建工具"
+    },
+    {
+      "name": "vcpkg",
+      "url": "https://github.com/microsoft/vcpkg",
+      "role": "原生第三方库构建来源"
+    },
+    {
+      "name": "curl",
+      "url": "https://github.com/curl/curl",
+      "role": "运行库 HTTP 依赖"
+    },
+    {
+      "name": "zlib",
+      "url": "https://github.com/madler/zlib",
+      "role": "运行库压缩依赖"
+    },
+    {
+      "name": "cpp-httplib",
+      "url": "https://github.com/yhirose/cpp-httplib",
+      "role": "NInfer 第三方代码来源；由上游依赖清单管理"
+    },
+    {
+      "name": "nlohmann/json",
+      "url": "https://github.com/nlohmann/json",
+      "role": "NInfer 第三方代码来源；由上游依赖清单管理"
+    },
+    {
+      "name": "spdlog",
+      "url": "https://github.com/gabime/spdlog",
+      "role": "NInfer 第三方代码来源；由上游依赖清单管理"
+    },
+    {
+      "name": "utf8proc",
+      "url": "https://github.com/JuliaStrings/utf8proc",
+      "role": "NInfer 第三方代码来源；由上游依赖清单管理"
+    },
+    {
+      "name": "llama.cpp Jinja",
+      "url": "https://github.com/ggml-org/llama.cpp/tree/master/common",
+      "role": "NInfer 随附 llama-jinja 的上游来源"
+    },
+    {
+      "name": "Python",
+      "url": "https://www.python.org/downloads/",
+      "role": "复现脚本解释器；验证版本 3.14.3"
+    },
+    {
+      "name": "PyPI",
+      "url": "https://pypi.org/",
+      "role": "Python 依赖发行源；版本由 requirements-runtime-lock.txt 固定"
+    },
+    {
+      "name": "certifi",
+      "url": "https://pypi.org/project/certifi/2026.10.23/",
+      "role": "运行时 Python 依赖",
+      "version": "2026.10.23"
+    },
+    {
+      "name": "charset-normalizer",
+      "url": "https://pypi.org/project/charset-normalizer/3.5.2/",
+      "role": "运行时 Python 依赖",
+      "version": "3.5.2"
+    },
+    {
+      "name": "idna",
+      "url": "https://pypi.org/project/idna/3.20/",
+      "role": "运行时 Python 依赖",
+      "version": "3.20"
+    },
+    {
+      "name": "Jinja2",
+      "url": "https://pypi.org/project/Jinja2/3.1.6/",
+      "role": "运行时 Python 依赖",
+      "version": "3.1.6"
+    },
+    {
+      "name": "MarkupSafe",
+      "url": "https://pypi.org/project/MarkupSafe/3.0.4/",
+      "role": "运行时 Python 依赖",
+      "version": "3.0.4"
+    },
+    {
+      "name": "pillow",
+      "url": "https://pypi.org/project/pillow/13.0.0/",
+      "role": "运行时 Python 依赖",
+      "version": "13.0.0"
+    },
+    {
+      "name": "requests",
+      "url": "https://pypi.org/project/requests/2.34.2/",
+      "role": "运行时 Python 依赖",
+      "version": "2.34.2"
+    },
+    {
+      "name": "urllib3",
+      "url": "https://pypi.org/project/urllib3/2.8.0/",
+      "role": "运行时 Python 依赖",
+      "version": "2.8.0"
+    },
+    {
+      "name": "PyTorch",
+      "url": "https://pytorch.org/",
+      "role": "模型转换阶段使用；预编译运行包不要求安装"
+    },
+    {
+      "name": "Transformers",
+      "url": "https://github.com/huggingface/transformers",
+      "role": "模型配置、分词／模板一致性参考及转换工具依赖"
+    },
+    {
+      "name": "safetensors",
+      "url": "https://github.com/huggingface/safetensors",
+      "role": "原始权重格式与转换工具依赖"
+    },
+    {
+      "name": "NumPy",
+      "url": "https://numpy.org/",
+      "role": "GGUF 张量目录审计与转换工具依赖"
+    },
+    {
+      "name": "Git",
+      "url": "https://git-scm.com/",
+      "role": "代码获取与版本管理"
+    },
+    {
+      "name": "GitHub CLI",
+      "url": "https://github.com/cli/cli/releases/tag/v2.103.2",
+      "role": "发布工具；不参与模型推理",
+      "version": "2.103.2"
+    },
+    {
+      "name": "GitHub REST releases",
+      "url": "https://docs.github.com/en/rest/releases/releases",
+      "role": "发行发布与核验 API 文档"
+    },
+    {
+      "name": "vLLM installation",
+      "url": "https://docs.vllm.ai/en/latest/getting_started/installation/gpu/",
+      "role": "仅作原始平台分析参考；本次未实测 vLLM"
+    },
+    {
+      "name": "GameScaling 27B config",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-27B-S3/blob/main/config.json",
+      "role": "仅作模型结构对照；本次未部署 27B"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/LICENSE",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/README.md",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/config.json",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/examples/doom_battle1.jpg",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/examples/doom_battle1_action.txt",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/examples/run_example.py",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/gamescaling/__init__.py",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/gamescaling/action.py",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/gamescaling/keymaps.py",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/gamescaling/policy.py",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/gamescaling/prompt.py",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/prompts/example_doom_battle1.txt",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/prompts/system_prompt_template.txt",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/requirements.txt",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/scripts/serve_vllm.sh",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling/resolve/f5a05714892307c3e3aefbf6cc2b177e90798a54/tests/test_core.py",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/LICENSE",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/README.md",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/chat_template.jinja",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/config.json",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/generation_config.json",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/model.safetensors",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/preprocessor_config.json",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/processor_config.json",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/tokenizer.json",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/tokenizer_config.json",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "Pinned upstream file",
+      "url": "https://huggingface.co/THUSI-Lab/GameScaling-0.8B-S3/resolve/1b89640dcf2ef51fb53ad9338a0725e9622dd200/video_preprocessor_config.json",
+      "role": "已记录的原始客户端／模型文件下载地址"
+    },
+    {
+      "name": "runtime-win-sm89.zip",
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/runtime-win-sm89.zip",
+      "role": "本项目固定复现资产；SHA-256 见 release-assets.json"
+    },
+    {
+      "name": "model-ninfer-bf16.zip",
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/model-ninfer-bf16.zip",
+      "role": "本项目固定复现资产；SHA-256 见 release-assets.json"
+    },
+    {
+      "name": "model-llama-q8.zip",
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/model-llama-q8.zip",
+      "role": "本项目固定复现资产；SHA-256 见 release-assets.json"
+    },
+    {
+      "name": "recording-tools.zip",
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/recording-tools.zip",
+      "role": "本项目固定复现资产；SHA-256 见 release-assets.json"
+    },
+    {
+      "name": "verification-evidence.zip",
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/verification-evidence.zip",
+      "role": "本项目固定复现资产；SHA-256 见 release-assets.json"
+    },
+    {
+      "name": "comparison-5min.mp4",
+      "url": "https://github.com/LANLightning/GameScalingRecurrence/releases/download/v2026.10.26/comparison-5min.mp4",
+      "role": "本项目固定复现资产；SHA-256 见 release-assets.json"
+    }
+  ]
+}

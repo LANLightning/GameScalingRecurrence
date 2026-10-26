@@ -12,6 +12,14 @@ GameScaling-0.8B-S3 在 Windows 上的 **NInfer BF16/CUDA + KVMem + SSE** 与 **
 
 量化、视觉精度、CUDA/Vulkan、KV 和后续游戏画面均有差异，当前速度差不能只归因于引擎或量化。详见 [BF16 / Q8 的原理、本机张量审计与比较边界](docs/PRECISION.md)。
 
+## NInfer 技术来源与外部链接
+
+- [Neroued/ninfer](https://github.com/Neroued/ninfer)：推理引擎上游。
+- [1314521gjy/ninfer-fusion-kvmem](https://github.com/1314521gjy/ninfer-fusion-kvmem)：融合、KVMem、主机 KV、ring 与复用基础。
+- [ByronLeeeee/ninfer-extended](https://github.com/ByronLeeeee/ninfer-extended)：小模型算子和前端实现参考。
+
+[完整外部 URL 清单与版本来源](docs/SOURCES.md) 包含模型、论文、转换器、引擎、桥接依赖、录像工具、Python 依赖及下载入口。llama.cpp 的转换器源码为 v0.7.0，实际 Windows Vulkan 服务为 b11669，两者分别记录。
+
 ## 一行安装并验证两个后端
 
 前提：Windows x64、Git、Python 3.12+ x64（实测 3.14.3，加入 PATH）、NVIDIA sm89 显卡和支持 CUDA 13 的驱动。实测显卡为 RTX 4070 Laptop 8 GB；当前预编译 NInfer 不支持宣称任意 GPU 可用。预留至少 15 GB 空间。首次下载约 4.4 GB，不含 Minecraft。
